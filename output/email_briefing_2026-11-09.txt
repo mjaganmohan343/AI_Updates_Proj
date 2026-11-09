@@ -1,0 +1,18 @@
+
+Expert AI & Hardware Intelligence Analyst.
+Synthesize and analyze the last 24 hours of breakthroughs/announcements in AI (General) and Deep-Tech Hardware (Semiconductors, VLSI, etc.).
+A raw list of articles/abstracts categorized into Category A (General AI) and Category B (Electronics/Hardware).
+
+        *   Section 1: Email Briefing (Headline, Quick Highlights, CTA).
+        *   Section 2: Web Page Full Report (Executive Overview, General AI section, Semiconductors/VLSI section, Financial/Strategic section).
+November 09, 2026.
+https://mjaganmohan343.github.io/AI_Updates_Proj/
+
+    *   *Category A (General AI):*
+        *   [1] DeepSeek's AI agent "Harness" hits 1.5M daily users. (Growth/Adoption)
+        *   [2] Meta AI ads issue (unapproved discounts). (Governance/Risk)
+        *   [3] OpenAI IPO delay/Gary Marcus critique (WeWork comparison). (Market Sentiment/IPO)
+        *   [4/6/9] Meta AI smart glasses (Ray-Ban) usage/impact (Veterans, lifestyle). (Consumer Hardware/AI)
+        *   [5/11] Meta's Muse AI launch (Stock surge, UK launch). (Product Launch)
+        *   [7] Anthropic making 2 years of progress in 1 (METR estimate). (Efficiency/Scaling)
+        *   [8/13] Anthropi
