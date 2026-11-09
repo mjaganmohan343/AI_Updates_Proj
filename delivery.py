@@ -142,8 +142,9 @@ def save_reports(email_briefing: str, web_report: str):
 
 def dispatch_email(email_briefing: str):
     """Sends Section 1 executive briefing via standard SMTP (Gmail)."""
+    print(f"\n📧 [Email Debug] EMAIL_ENABLED={config.EMAIL_ENABLED}, SMTP_USER='{config.SMTP_USER}', RECIPIENTS={config.EMAIL_RECIPIENTS}")
     if not config.EMAIL_ENABLED or not config.SMTP_USER or not config.SMTP_PASSWORD:
-        print("[Info] Email dispatch is disabled or credentials are not configured.")
+        print("[Warning] Email dispatch skipped: EMAIL_ENABLED is false or credentials are empty.")
         return
         
     today_str = datetime.now().strftime("%B %d, %Y")
@@ -156,15 +157,17 @@ def dispatch_email(email_briefing: str):
     msg.attach(MIMEText(email_briefing, "plain", "utf-8"))
     
     try:
-        print(f"📧 Sending email to {len(config.EMAIL_RECIPIENTS)} recipients...")
-        server = smtplib.SMTP(config.SMTP_SERVER, config.SMTP_PORT)
+        print(f"📧 Connecting to {config.SMTP_SERVER}:{config.SMTP_PORT} as {config.SMTP_USER}...")
+        server = smtplib.SMTP(config.SMTP_SERVER, config.SMTP_PORT, timeout=30)
+        server.ehlo()
         server.starttls()
+        server.ehlo()
         server.login(config.SMTP_USER, config.SMTP_PASSWORD)
         server.sendmail(config.SMTP_USER, config.EMAIL_RECIPIENTS, msg.as_string())
         server.quit()
-        print("✓ Email dispatched successfully!")
+        print("🎉 ✅ EMAIL DISPATCHED SUCCESSFULLY TO INBOX!")
     except Exception as e:
-        print(f"[Error] Failed to send email: {e}")
+        print(f"❌ [Error] Failed to send email via SMTP: {e}")
 
 def dispatch_telegram(email_briefing: str):
     """Optional: Sends executive summary to a free Telegram bot."""
