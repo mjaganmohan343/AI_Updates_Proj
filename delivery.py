@@ -142,20 +142,47 @@ def save_reports(email_briefing: str, web_report: str):
     print(f"✓ Saved web report to: {index_md_path} and {index_html_path}")
 
 def dispatch_email(email_briefing: str):
-    """Sends Section 1 executive briefing via standard SMTP (Gmail)."""
-    print(f"\n📧 [Email Debug] EMAIL_ENABLED={config.EMAIL_ENABLED}, SMTP_USER='{config.SMTP_USER}', RECIPIENTS={config.EMAIL_RECIPIENTS}")
-    if not config.EMAIL_ENABLED or not config.SMTP_USER or not config.SMTP_PASSWORD:
-        print("[Warning] Email dispatch skipped: EMAIL_ENABLED is false or credentials are empty.")
+    """
+    Sends Section 1 executive briefing:
+    1. Uses Resend HTTP API (Port 443 HTTPS) if RESEND_API_KEY is provided (reliable on cloud runners).
+    2. Falls back to standard SMTP (Port 465 SSL / 587 TLS).
+    """
+    print(f"\n📧 [Email Debug] EMAIL_ENABLED={config.EMAIL_ENABLED}, RESEND_API_KEY={'set' if config.RESEND_API_KEY else 'empty'}, RECIPIENTS={config.EMAIL_RECIPIENTS}")
+    if not config.EMAIL_ENABLED:
+        print("[Warning] Email dispatch skipped: EMAIL_ENABLED is false.")
         return
-        
+
     today_str = datetime.now().strftime("%B %d, %Y")
     subject = f"⚡ Daily AI & Semiconductor Briefing: {today_str}"
-    
-    msg = MIMEMultipart()
-    msg["From"] = config.SMTP_USER
-    msg["To"] = ", ".join(config.EMAIL_RECIPIENTS)
-    msg["Subject"] = subject
-    msg.attach(MIMEText(email_briefing, "plain", "utf-8"))
+
+    # Method 1: Resend HTTP API (Port 443 - Never blocked by cloud firewalls)
+    if config.RESEND_API_KEY:
+        try:
+            print("🚀 Sending email via Resend HTTPS API (Port 443)...")
+            headers = {
+                "Authorization": f"Bearer {config.RESEND_API_KEY}",
+                "Content-Type": "application/json"
+            }
+            # Resend free onboarding allows sending from onboarding@resend.dev to the account owner's email
+            payload = {
+                "from": "AI & Semiconductor Analyst <onboarding@resend.dev>",
+                "to": config.EMAIL_RECIPIENTS,
+                "subject": subject,
+                "text": email_briefing
+            }
+            resp = requests.post("https://api.resend.com/emails", json=payload, headers=headers, timeout=20)
+            if resp.status_code in (200, 201):
+                print(f"🎉 ✅ EMAIL DISPATCHED SUCCESSFULLY VIA RESEND TO {config.EMAIL_RECIPIENTS}!")
+                return
+            else:
+                print(f"[Notice] Resend returned status {resp.status_code}: {resp.text}")
+        except Exception as e_resend:
+            print(f"[Notice] Resend API attempt failed: {e_resend}. Trying SMTP fallback...")
+
+    # Method 2: Standard SMTP Fallback (Port 465 SSL)
+    if not config.SMTP_USER or not config.SMTP_PASSWORD:
+        print("[Warning] SMTP credentials are not configured.")
+        return
     
     # Try Port 465 (Direct SSL) first: reliable on cloud platforms like GitHub Actions
     try:

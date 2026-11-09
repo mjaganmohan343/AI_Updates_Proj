@@ -30,6 +30,7 @@ jobs:
       - name: Execute Daily Intelligence Pipeline
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
           EMAIL_ENABLED: ${{ secrets.EMAIL_ENABLED }}
           SMTP_SERVER: ${{ secrets.SMTP_SERVER || 'smtp.gmail.com' }}

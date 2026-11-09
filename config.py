@@ -15,6 +15,7 @@ WEBSITE_URL = os.getenv("WEBSITE_URL", "").strip() or "https://github.com/your-u
 
 # Delivery Configurations
 EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").strip().lower().strip("\"'") in ("true", "1", "yes")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY", "").strip()
 SMTP_SERVER = os.getenv("SMTP_SERVER", "").strip() or "smtp.gmail.com"
 
 # Safely parse port even if passed as empty string
