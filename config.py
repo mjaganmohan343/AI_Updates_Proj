@@ -24,7 +24,11 @@ SMTP_PORT = int(smtp_port_raw) if smtp_port_raw.isdigit() else 587
 
 SMTP_USER = os.getenv("SMTP_USER", "").strip()
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "").strip()
-EMAIL_RECIPIENTS = [r.strip() for r in os.getenv("EMAIL_RECIPIENTS", "").split(",") if r.strip()]
+EMAIL_RECIPIENTS = [
+    r.strip().strip("\"'").strip()
+    for r in os.getenv("EMAIL_RECIPIENTS", "").replace(";", ",").split(",")
+    if r.strip().strip("\"'").strip()
+]
 
 TELEGRAM_ENABLED = os.getenv("TELEGRAM_ENABLED", "false").lower() in ("true", "1", "yes")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")

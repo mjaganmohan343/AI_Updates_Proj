@@ -702,27 +702,35 @@ def dispatch_email(email_briefing: str):
 
     # Method 1: Resend HTTP API (Port 443 - Never blocked by cloud firewalls)
     if config.RESEND_API_KEY:
-        try:
-            print("🚀 Sending executive HTML email via Resend HTTPS API (Port 443)...")
-            headers = {
-                "Authorization": f"Bearer {config.RESEND_API_KEY}",
-                "Content-Type": "application/json"
-            }
+        print(f"🚀 Sending executive HTML email via Resend HTTPS API (Port 443) to {len(config.EMAIL_RECIPIENTS)} recipients...")
+        headers = {
+            "Authorization": f"Bearer {config.RESEND_API_KEY}",
+            "Content-Type": "application/json"
+        }
+        any_success = False
+        for rec in config.EMAIL_RECIPIENTS:
+            clean_rec = rec.strip().strip("\"'").strip()
+            if not clean_rec:
+                continue
             payload = {
                 "from": "AI & Semiconductor Analyst <onboarding@resend.dev>",
-                "to": config.EMAIL_RECIPIENTS,
+                "to": [clean_rec],
                 "subject": subject,
                 "text": email_briefing,
                 "html": html_email
             }
-            resp = requests.post("https://api.resend.com/emails", json=payload, headers=headers, timeout=20)
-            if resp.status_code in (200, 201):
-                print(f"🎉 ✅ EXECUTIVE HTML EMAIL DISPATCHED SUCCESSFULLY VIA RESEND TO {config.EMAIL_RECIPIENTS}!")
-                return
-            else:
-                print(f"[Notice] Resend returned status {resp.status_code}: {resp.text}")
-        except Exception as e_resend:
-            print(f"[Notice] Resend API attempt failed: {e_resend}. Trying SMTP fallback...")
+            try:
+                resp = requests.post("https://api.resend.com/emails", json=payload, headers=headers, timeout=20)
+                if resp.status_code in (200, 201):
+                    print(f"🎉 ✅ EXECUTIVE HTML EMAIL DISPATCHED SUCCESSFULLY VIA RESEND TO {clean_rec}!")
+                    any_success = True
+                else:
+                    print(f"[Notice] Resend could not deliver to {clean_rec} (Status {resp.status_code}): {resp.text}")
+            except Exception as e_ind:
+                print(f"[Notice] Failed sending to {clean_rec}: {e_ind}")
+                
+        if any_success:
+            return
 
     # Method 2: Standard SMTP Fallback (Port 465 SSL)
     if not config.SMTP_USER or not config.SMTP_PASSWORD:
