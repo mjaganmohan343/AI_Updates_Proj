@@ -1,17 +1,22 @@
-
 Expert AI & Hardware Intelligence Analyst.
-Synthesize and analyze the last 24 hours of breakthroughs/announcements in AI (General) and Deep-Tech Hardware (Semiconductors, VLSI, etc.).
-A raw list of 30 articles/summaries categorized into Category A (General AI) and Category B (Semiconductors/Hardware).
+Synthesize the last 24 hours of breakthroughs in AI and Deep-Tech Hardware.
 November 09, 2026.
 https://mjaganmohan343.github.io/AI_Updates_Proj/
 
-        *   *Section 1: Email Briefing* (Headline Gen AI, Headline Semi, 4 Quick Highlights, CTA).
-        *   *Section 2: Web Page Full Report* (Executive Overview, 1. General AI & Open Source [2 headlines], 2. Semiconductors, VLSI & Hardware AI [2 headlines], 3. Financial & Strategic Shifts).
+        *   Section 1: Email Briefing (Headline AI, Headline Semi, 4 Quick Highlights, CTA).
+        *   Section 2: Web Page Full Report (Executive Overview, General AI & Open Source, Semiconductors/VLSI/Hardware AI, Financial/Strategic Shifts).
+No thought process, no repetition of instructions, start immediately with '--- SECTION 1: EMAIL BRIEFING ---'.
 
     *   *Category A (General AI):*
-        *   [1] DeepSeek's AI agent "Harness" hits 1.5M daily users. (Growth/Scale)
-        *   [2] Meta AI ads issue (unapproved discounts). (Risk/Governance)
-        *   [3] METR measuring Anthropic's speed-up (2 years in 1). (Efficiency/Research)
-        *   [4] OpenAI IPO delay/Gary Marcus critique (WeWork comparison). (Business/Valuation)
-        *   [5/7] Meta AI smart glasses for veterans. (Consumer/Hardware application)
-        *   [6/10] Meta's Muse AI launch & mini app creation. 
+        *   DeepSeek's AI agent "Harness" hits 1.5M daily users.
+        *   Meta's AI ads issue (unapproved discounts).
+        *   METR measuring Anthropic's speed-up (2 years of progress in 1).
+        *   OpenAI IPO delay/valuation concerns (Gary Marcus).
+        *   Meta AI glasses usage (veterans).
+        *   Meta's Muse AI launch (stock surge, mini app creation).
+        *   Anthropic's $3.4B generator deal for data centers.
+        *   Parental controls for ChatGPT, Gemini, Meta AI.
+
+    *   *Category B (Semiconductors & VLSI):*
+        *   Ardian raising €1B for a semiconductor fund/platform.
+        
