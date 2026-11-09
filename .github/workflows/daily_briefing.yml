@@ -1,0 +1,51 @@
+name: Daily AI & Semiconductor Briefing
+
+on:
+  schedule:
+    # Runs daily at 06:00 UTC (11:30 AM IST) - completely free on GitHub Actions
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows manual trigger anytime from the GitHub website
+
+jobs:
+  run-analyst:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to commit new reports to the repo
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Execute Daily Intelligence Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
+          EMAIL_ENABLED: ${{ secrets.EMAIL_ENABLED }}
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
+          TELEGRAM_ENABLED: ${{ secrets.TELEGRAM_ENABLED }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python main.py
+
+      - name: Commit and Push Daily Reports to GitHub Pages
+        run: |
+          git config --global user.name "Autonomous Analyst Bot"
+          git config --global user.email "bot@users.noreply.github.com"
+          git add docs/ output/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(briefing): daily intelligence update $(date +'%Y-%m-%d')" && git push)

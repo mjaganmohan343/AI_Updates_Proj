@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Output local artifacts if needed
+# (Note: docs/ is kept so GitHub Pages can publish it)

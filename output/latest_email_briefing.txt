@@ -1,0 +1,11 @@
+--- SECTION 1: EMAIL BRIEFING ---
+Target Tone: Professional, direct, highly informative.
+
+- Top Headline of the Day (General AI): Frontier Open-Weight Reasoning Models Advance with Autonomous Multi-Step Code & Verification Engines.
+- Top Headline of the Day (Semiconductor/VLSI AI): Synopsys and Cadence Unveil Autonomous Agentic EDA Platforms, Achieving Up to 50x Faster RTL Validation and 30% Better PPA.
+- Quick Highlights:
+  * 50x acceleration in time-to-validated RTL achieved by Synopsys AgentEngineer through autonomous multi-step verification loops.
+  * Cadence AuraStack & Maestro integration with NVIDIA Nemotron yields 30% higher Quality of Results (QoR) and a 5x improvement in token efficiency on custom physical layouts.
+  * Intel 18A (1.8nm class) with PowerVia Backside Power Delivery (BSPDN) and RibbonFET GAA reaches key high-volume tape-out milestones for custom AI ASICs.
+  * European Chips JU finalizes landmark EuroCDP pact democratizing advanced HPC and AI chiplet tape-out access for startups.
+- [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> https://your-username.github.io/AI_Updates_Proj/"
