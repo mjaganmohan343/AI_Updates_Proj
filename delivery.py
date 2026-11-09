@@ -4,6 +4,7 @@ and dispatches notifications (Email / Telegram).
 """
 
 import os
+import ssl
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -156,8 +157,21 @@ def dispatch_email(email_briefing: str):
     msg["Subject"] = subject
     msg.attach(MIMEText(email_briefing, "plain", "utf-8"))
     
+    # Try Port 465 (Direct SSL) first: reliable on cloud platforms like GitHub Actions
     try:
-        print(f"📧 Connecting to {config.SMTP_SERVER}:{config.SMTP_PORT} as {config.SMTP_USER}...")
+        print(f"📧 Connecting via SSL to {config.SMTP_SERVER}:465...")
+        ssl_context = ssl.create_default_context()
+        with smtplib.SMTP_SSL(config.SMTP_SERVER, 465, context=ssl_context, timeout=30) as server:
+            server.login(config.SMTP_USER, config.SMTP_PASSWORD)
+            server.sendmail(config.SMTP_USER, config.EMAIL_RECIPIENTS, msg.as_string())
+        print("🎉 ✅ EMAIL DISPATCHED SUCCESSFULLY VIA PORT 465 (SSL) TO INBOX!")
+        return
+    except Exception as e_ssl:
+        print(f"[Notice] Port 465 (SSL) failed: {e_ssl}. Attempting Port 587 (STARTTLS)...")
+
+    # Fallback to Port 587 (STARTTLS)
+    try:
+        print(f"📧 Connecting via STARTTLS to {config.SMTP_SERVER}:{config.SMTP_PORT}...")
         server = smtplib.SMTP(config.SMTP_SERVER, config.SMTP_PORT, timeout=30)
         server.ehlo()
         server.starttls()
@@ -165,9 +179,9 @@ def dispatch_email(email_briefing: str):
         server.login(config.SMTP_USER, config.SMTP_PASSWORD)
         server.sendmail(config.SMTP_USER, config.EMAIL_RECIPIENTS, msg.as_string())
         server.quit()
-        print("🎉 ✅ EMAIL DISPATCHED SUCCESSFULLY TO INBOX!")
-    except Exception as e:
-        print(f"❌ [Error] Failed to send email via SMTP: {e}")
+        print("🎉 ✅ EMAIL DISPATCHED SUCCESSFULLY VIA PORT 587 TO INBOX!")
+    except Exception as e_tls:
+        print(f"❌ [Error] Failed to send email via SMTP (both 465 and 587 failed): {e_tls}")
 
 def dispatch_telegram(email_briefing: str):
     """Optional: Sends executive summary to a free Telegram bot."""

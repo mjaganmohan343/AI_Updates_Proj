@@ -115,8 +115,7 @@ def call_gemini(prompt: str, api_key: str) -> str:
             "contents": [
                 {
                     "parts": [
-                        {"text": SYSTEM_PROMPT},
-                        {"text": prompt}
+                        {"text": f"{SYSTEM_PROMPT}\n\nTask Input:\n{prompt}"}
                     ]
                 }
             ],
