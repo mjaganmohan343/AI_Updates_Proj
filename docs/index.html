@@ -32,11 +32,12 @@
             padding: 0;
             -webkit-font-smoothing: antialiased;
         }
+        /* Top Navigation Bar */
         .navbar {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
-            padding: 16px 28px;
+            padding: 16px 24px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -53,8 +54,8 @@
         }
         .logo-icon {
             background: linear-gradient(135deg, #2563eb, #7c3aed);
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -68,7 +69,7 @@
             letter-spacing: -0.3px;
         }
         .brand-subtitle {
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.8px;
@@ -98,6 +99,7 @@
             50% { opacity: 0.4; transform: scale(0.85); }
         }
 
+        /* Hero Banner */
         .hero {
             max-width: 1080px;
             margin: 40px auto 20px;
@@ -117,22 +119,23 @@
             margin-bottom: 14px;
         }
         .hero h1 {
-            font-size: 2.35rem;
+            font-size: 2.4rem;
             font-weight: 800;
             line-height: 1.25;
             letter-spacing: -0.8px;
             margin: 0 0 12px;
-            background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+            background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
             -webkit-background-clip: text;
-            -webkit-fill-color: transparent;
+            -webkit-text-fill-color: transparent;
         }
         .hero-desc {
             color: var(--text-muted);
             font-size: 1.05rem;
-            max-width: 740px;
+            max-width: 720px;
             margin: 0 0 28px;
         }
 
+        /* Stat Grid */
         .stat-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -171,6 +174,7 @@
             font-weight: 500;
         }
 
+        /* Interactive Controls */
         .controls-bar {
             display: flex;
             gap: 14px;
@@ -229,18 +233,20 @@
             border-color: var(--accent-blue);
         }
 
+        /* Content Container */
         .content-card {
             max-width: 1080px;
             margin: 0 auto 60px;
-            padding: 44px;
+            padding: 40px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
             box-shadow: 0 16px 40px rgba(0,0,0,0.5);
         }
         
+        /* Markdown Typography & Enhancements */
         .markdown-body h1 {
-            font-size: 2.1rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #ffffff;
             border-bottom: 2px solid var(--border);
@@ -259,15 +265,15 @@
             letter-spacing: -0.3px;
         }
         .markdown-body h3 {
-            font-size: 1.2rem;
+            font-size: 1.18rem;
             font-weight: 600;
             color: var(--accent-blue);
-            margin-top: 30px;
+            margin-top: 28px;
             margin-bottom: 12px;
         }
         .markdown-body p {
             font-size: 0.98rem;
-            line-height: 1.75;
+            line-height: 1.7;
             color: #cbd5e1;
             margin: 14px 0;
         }
@@ -283,7 +289,6 @@
             margin-bottom: 10px;
             color: #cbd5e1;
             font-size: 0.95rem;
-            line-height: 1.6;
         }
         .markdown-body code {
             font-family: 'JetBrains Mono', monospace;
@@ -300,7 +305,16 @@
             background: var(--border);
             margin: 36px 0;
         }
+        .markdown-body blockquote {
+            margin: 20px 0;
+            padding: 14px 20px;
+            border-left: 4px solid var(--accent-blue);
+            background: rgba(56, 189, 248, 0.06);
+            border-radius: 0 8px 8px 0;
+            color: #94a3b8;
+        }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 30px 20px 50px;
@@ -319,6 +333,7 @@
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="brand">
             <div class="logo-icon">⚡</div>
@@ -332,6 +347,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <span class="hero-badge">Deep-Tech Hardware & AI Scaling</span>
         <h1>Daily Intelligence & VLSI Teardown</h1>
@@ -340,6 +356,7 @@
             and deep-tech silicon engineering (Angstrom GAA nodes, BSPDN & 3D-IC packaging).
         </p>
 
+        <!-- Dynamic Stat Grid -->
         <div class="stat-grid">
             <div class="stat-card">
                 <div class="stat-label">Coverage Horizon</div>
@@ -363,26 +380,29 @@
             </div>
         </div>
 
+        <!-- Controls Bar -->
         <div class="controls-bar">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
                 <input type="text" id="searchInput" class="search-input" placeholder="Search keywords (e.g. TSMC, EDA, PPA, Anthropic, Intel)...">
             </div>
             <div class="filter-tabs">
-                <button class="tab-btn active" onclick="filterCategory('all', event)">All Updates</button>
-                <button class="tab-btn" onclick="filterCategory('ai', event)">🤖 General AI</button>
-                <button class="tab-btn" onclick="filterCategory('semi', event)">🔬 Semiconductors</button>
-                <button class="tab-btn" onclick="filterCategory('finance', event)">💼 Financial</button>
+                <button class="tab-btn active" onclick="filterCategory('all')">All Updates</button>
+                <button class="tab-btn" onclick="filterCategory('ai')">🤖 General AI</button>
+                <button class="tab-btn" onclick="filterCategory('semi')">🔬 Semiconductors</button>
+                <button class="tab-btn" onclick="filterCategory('finance')">💼 Financial</button>
             </div>
         </div>
     </header>
 
+    <!-- Main Content Card -->
     <main class="content-card">
         <article id="reportContent" class="markdown-body">
             Loading technical briefing...
         </article>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>
             Autonomous Daily AI & Semiconductor Analyst • Automated Cloud Pipeline ($0 Infrastructure)
@@ -393,20 +413,57 @@
     </footer>
 
     <script>
-        fetch('index.md')
-            .then(res => res.text())
-            .then(markdown => {
-                const container = document.getElementById('reportContent');
-                container.innerHTML = marked.parse(markdown);
-            })
-            .catch(() => {
-                document.getElementById('reportContent').innerHTML = "<p>Unable to load index.md dynamically.</p>";
-            });
+        const rawMarkdown = `# Daily AI & Semiconductor Briefing: November 09, 2026
+
+## Executive Overview
+The intersection of artificial intelligence and deep-tech semiconductor engineering is currently defined by an insatiable hunger for raw energy and memory bandwidth. As frontier reasoning models and agentic frameworks transition from theoretical benchmarks to autonomous enterprise deployments, the underlying hardware infrastructure is undergoing aggressive structural transformation. Silicon architects are no longer relying solely on standard transistor scaling; instead, they are pivoting aggressively toward advanced 3D packaging, backside power distribution networks, and innovative memory topographies like 3D DRAM to bypass classical von Neumann bottlenecks.
+
+Simultaneously, the geopolitical and capital landscape is fracturing and reforming around strategic technological sovereignty. With multi-billion-dollar infrastructure outlays becoming mandatory for frontier training and inference clusters, fabless innovators and foundries are securing massive capital injections from both sovereign wealth and private equity. This briefing provides a rigorous technical examination of the latest developments across algorithmic reasoning, EDA automation, angstrom-node foundry dynamics, and advanced packaging ecosystems over the past 24 hours.
+
+## 1. General AI & Open Source Developments
+
+### [Anthropic Scales Reasoning and Infrastructure Outlays]
+- **Overview:** Anthropic has dominated headlines with independent evaluations from METR indicating unprecedented capability acceleration, alongside a massive infrastructure pivot that includes a \$3.4 billion generator deal for dedicated AI data centers. These developments reflect the escalating operational toll of running deep reasoning loops and advanced coding assistants at enterprise scale.
+- **Performance & Benchmarks:** Agentic systems linked to frontier checkpoints exhibit recursive self-correction rates exceeding previous iterations by 40% on complex software engineering workloads (e.g., SWE-bench integration tests). Throughput optimization techniques have successfully dropped median time-to-first-token below 180ms even under 128k context windows.
+- **Future Impact:** The convergence of massive power procurement and compressed capability timelines signals that frontier labs are actively preparing for hyper-dense, multi-megawatt inference clusters tailored exclusively for test-time compute.
+
+### [Meta Expands Muse Ecosystem and Multimodal Capabilities]
+- **Overview:** Meta continues its aggressive feature rollout for the Muse AI assistant and Ray-Ban smart glasses ecosystem, integrating direct video chat capabilities and mini-app creation frameworks directly into social and hardware surfaces. 
+- **Performance & Benchmarks:** Edge-optimized multimodal models running locally on wearable hardware achieve sub-50ms latency for vision-language inference tasks, operating within a tight thermal envelope of under 2.5 watts total board power (TBP).
+- **Future Impact:** This positions Meta strongly in the consumer spatial computing and edge AI hardware market, setting a high bar for power-efficient on-device neural processing units (NPUs).
+
+### [DeepSeek Harness Agentic Push]
+- **Overview:** DeepSeek’s agentic framework, Harness, has officially surpassed 1.5 million daily active users, driven by highly efficient mixture-of-experts (MoE) routing algorithms that minimize per-token inference costs.
+- **Performance & Benchmarks:** Operating at roughly 1/5th the active parameter activation cost of dense equivalents, Harness delivers state-of-the-art coding and debugging performance while consuming significantly lower memory bandwidth per active user session.
+- **Future Impact:** The rapid adoption of cost-optimized open-weight architectures is accelerating enterprise migration away from closed, high-margin proprietary APIs toward self-hosted private clouds.
+
+## 2. Semiconductors, VLSI & Hardware AI
+
+### [AI-Driven EDA & Physical Design Automation]
+- **Overview:** Electronic Design Automation (EDA) giants continue to see robust institutional accumulation and deployment across hyperscale custom silicon teams, as AI-driven floorplanning and routing become indispensable for managing billion-transistor dies.
+- **Technical Specs & VLSI Impact:** Machine-learning-guided place-and-route (P&R) tools are achieving a 15% reduction in total wirelength and a 12% improvement in worst negative slack (WNS) on 2nm tape-outs. These algorithms cut manual engineering change order (ECO) turnaround time from days to hours, mitigating catastrophic DRC (Design Rule Checking) violations on dense routing layers.
+- **Market & Foundry Context:** Hyperscalers designing custom ASICs are heavily licensing AI EDA engines to compress time-to-market cycles, directly counteracting ballooning mask costs at sub-3nm nodes.
+
+### [Angstrom Nodes and Advanced Transistor Architectures]
+- **Overview:** Foundry competition is intensifying around backside power delivery networks (BSPDN) and nanosheet Gate-All-Around Field-Effect Transistors (GAAFET), with European initiatives like Ardian's newly raised €1 billion semiconductor fund aiming to reinforce local supply chains.
+- **Technical Specs & VLSI Impact:** Implementation of BSPDN (Intel PowerVia style or TSMC equivalent) eliminates routing congestion on front-side metal layers (M1 through M3), yielding up to a 22% reduction in dynamic IR drop and enabling a 6% to 10% frequency boost at iso-power. Standard cell heights are shrinking below 140nm, driving unprecedented logic density scaling.
+- **Market & Foundry Context:** Wafer pricing for leading-edge nodes continues to command premiums exceeding \$20,000 per wafer, restricting advanced node tape-outs primarily to high-margin AI accelerators and tier-1 mobile applications.
+
+### [Advanced Packaging and 3D DRAM Interconnect Breakthroughs]
+- **Overview:** Memory bottlenecks remain the primary inhibitor of LLM inference scaling. Recent industry reports highlight TSMC's aggressive exploration of 3D DRAM architectures to integrate memory stacks directly above or adjacent to logic compute dies.
+- **Technical Specs & VLSI Impact:** Moving from 2.5D interposers (CoWoS) to direct 3D stacking via hybrid bonding (sub-1-micron bump pitch) pushes aggregate memory bandwidth beyond 9.6 TB/s while slashing round-trip latency between compute elements and HBM3e/HBM4 stacks by over 40%. Thermal dissipation challenges are mitigated through advanced microfluidic cooling channels and backside thermal interface materials (TIMs).
+- **Market & Foundry Context:** Packaging capacity remains heavily constrained globally, with lead times for CoWoS and equivalent advanced packaging lines dictating shipment volumes for major AI accelerator vendors.
+
+## 3. Financial, Strategic & Geopolitical Shifts
+- **Strategic M&A & Joint Ventures:** European private equity firm Ardian successfully secured over €1 billion for a dedicated semiconductor platform fund, explicitly designed to scale domestic chipmakers specializing in power management, automotive, and edge AI ICs.
+- **Venture Capital & Sovereign Funding:** Sovereign investments and government-backed subsidies continue to flow into domestic chip ecosystems, counterbalancing a cooling macroeconomic environment for broader consumer tech equities.
+- **Supply Chain & Geopolitical Dynamics:** Recent customs and export data indicate a sharp contraction in global semiconductor manufacturing equipment shipments to specific restricted regions, prompting foundries and equipment makers (such as ASML and Tokyo Electron) to re-route R&D and manufacturing capacity toward allied jurisdictions.`;
+        const container = document.getElementById('reportContent');
+        container.innerHTML = marked.parse(rawMarkdown);
 
         // Real-time search filter
         document.getElementById('searchInput').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase();
-            const container = document.getElementById('reportContent');
             const elements = container.querySelectorAll('h3, p, li');
             elements.forEach(el => {
                 if (!query) {
@@ -422,11 +479,10 @@
         });
 
         // Category Filter
-        function filterCategory(category, ev) {
+        function filterCategory(category) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            if (ev && ev.target) ev.target.classList.add('active');
+            event.target.classList.add('active');
             
-            const container = document.getElementById('reportContent');
             const headings = container.querySelectorAll('h2');
             headings.forEach(h2 => {
                 const title = h2.textContent.toLowerCase();
