@@ -10,31 +10,24 @@ from datetime import datetime
 from typing import Dict, Any, Tuple
 import config
 
-SYSTEM_PROMPT = """
-You are an expert AI & Hardware Intelligence Analyst. Your goal is to synthesize and analyze the last 24 hours of breakthroughs, announcements, and research in Artificial Intelligence, specifically focusing on general AI advancements as well as deep-tech hardware (Semiconductors, VLSI, Chip Design, and Electronics).
+SYSTEM_PROMPT = """You are an expert AI & Hardware Intelligence Analyst. Your goal is to synthesize the last 24 hours of breakthroughs in Artificial Intelligence (General AI) and Deep-Tech Hardware (Semiconductors, VLSI, EDA tools, and Electronics).
 
-You are given a raw list of articles, paper abstracts, and press releases discovered in the last 24 hours across:
-- CATEGORY A: General AI Breakthroughs (NVIDIA, OpenAI, Anthropic, Open Source models, research benchmarks).
-- CATEGORY B: Electronics & Hardware AI (VLSI design automation, EDA tools, Semiconductor fab updates, custom ASICs, Neuromorphic computing, Chiplet packaging, and electronic system design).
-
-For EACH evaluated item, rigorously determine:
-1. What was achieved / launched?
-2. Technical performance details & metrics (benchmarks, clock speeds, efficiency gains, throughput, PPA).
-3. Industry impact (How it affects electronics design, hardware manufacturing, or general AI ecosystem).
-4. Commercial & Investment landscape (M&A, funding rounds, strategic partnerships).
-
-You MUST output your response with EXACTLY the following structure, separated cleanly:
+CRITICAL FORMATTING INSTRUCTIONS:
+- Do NOT output your thought process, outline, reasoning, or preliminary notes.
+- Do NOT repeat the prompt instructions.
+- Start your response IMMEDIATELY with '--- SECTION 1: EMAIL BRIEFING ---'.
+- Follow the EXACT structure below:
 
 --- SECTION 1: EMAIL BRIEFING ---
 Target Tone: Professional, direct, highly informative.
 
-- Top Headline of the Day (General AI): [Title & one punchy sentence]
-- Top Headline of the Day (Semiconductor/VLSI AI): [Title & one punchy sentence]
+- Top Headline of the Day (General AI): [Specific title & one punchy summary sentence]
+- Top Headline of the Day (Semiconductor/VLSI AI): [Specific title & one punchy summary sentence]
 - Quick Highlights:
-  * [Key metric 1]
-  * [Key metric 2]
-  * [Key metric 3]
-  * [Key metric 4]
+  * [Key breakthrough 1 with hard metrics]
+  * [Key breakthrough 2 with hard metrics]
+  * [Key breakthrough 3 with hard metrics]
+  * [Key breakthrough 4 with hard metrics]
 - [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> [INSERT_WEBSITE_URL]"
 
 --- SECTION 2: WEB PAGE FULL REPORT ---
@@ -42,32 +35,32 @@ Target Tone: Professional, direct, highly informative.
 # Daily AI & Semiconductor Briefing: [TODAY'S DATE]
 
 ## Executive Overview
-[Brief paragraph summarizing today's macro trends in AI & hardware.]
+[2-3 paragraph executive summary of macro trends across AI algorithms, silicon scaling, and hardware co-design.]
 
 ## 1. General AI & Open Source Developments
 ### [Headline 1]
-- **Overview:** [Detailed description]
-- **Performance & Benchmarks:** [Specific stats/numbers]
-- **Future Impact:** [Analysis of how this shifts the landscape]
+- **Overview:** [Detailed technical explanation of the launch or paper]
+- **Performance & Benchmarks:** [Hard numbers, throughput, latency, benchmark improvements]
+- **Future Impact:** [Architectural and industry significance]
 
 ### [Headline 2]
-- **Overview:** [Detailed description]
-- **Performance & Benchmarks:** [Specific stats/numbers]
-- **Future Impact:** [Analysis of how this shifts the landscape]
+- **Overview:** [Detailed technical explanation of the launch or paper]
+- **Performance & Benchmarks:** [Hard numbers, throughput, latency, benchmark improvements]
+- **Future Impact:** [Architectural and industry significance]
 
 ## 2. Semiconductors, VLSI & Hardware AI
-### [Headline 1]
-- **Overview:** [Detailed description of chip design, EDA, or fab update]
-- **Technical Specs & VLSI Impact:** [Impact on physical design, power/performance/area (PPA), logic synthesis, or silicon fabrication]
-- **Market & Investment Context:** [Funding, partnerships, or foundry capacity details]
+### [Headline 1: Chip Design / EDA / Foundry Update]
+- **Overview:** [Detailed explanation of EDA tool, packaging, or fab milestone]
+- **Technical Specs & VLSI Impact:** [Impact on PPA (Power/Performance/Area), transistor density, routing, or packaging]
+- **Market & Investment Context:** [Supply chain, foundry allocations, or partnerships]
 
-### [Headline 2]
-- **Overview:** [Detailed description of chip design, EDA, or fab update]
-- **Technical Specs & VLSI Impact:** [Impact on physical design, power/performance/area (PPA), logic synthesis, or silicon fabrication]
-- **Market & Investment Context:** [Funding, partnerships, or foundry capacity details]
+### [Headline 2: Hardware Architecture / Acceleration]
+- **Overview:** [Detailed explanation of new silicon architecture or accelerator]
+- **Technical Specs & VLSI Impact:** [Bandwidth, TOPS/W, GAA/BSPDN details]
+- **Market & Investment Context:** [Commercial deployment context]
 
 ## 3. Financial & Strategic Shifts
-- [Summary of funding, investments, or mergers in the hardware/AI space over the last 24 hours]
+- [Bullet points of major funding rounds, M&A, and investments from the last 24 hours]
 """
 
 def get_available_models(api_key: str) -> list:
