@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily AI & Semiconductor Intelligence • Autonomous Briefing System</title>
-    <meta name="description" content="Autonomous 24-hour AI and Semiconductor intelligence briefing covering General AI breakthroughs, VLSI, EDA, Chiplets, and Foundry news. Curated by MJM.">
+    <title>Daily AI & Semiconductor Intelligence • November 09, 2026</title>
+    <meta name="description" content="Autonomous 24-hour AI and Semiconductor intelligence briefing. Covers General AI breakthroughs, VLSI, EDA, Chiplets, and Foundry news.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
             --green: #10b981;
             --amber: #f59e0b;
             --indigo: #818cf8;
-            --red: #f43f5e;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -51,11 +50,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
         }
         .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
         .logo-box {
-            width: 40px; height: 40px;
+            width: 38px; height: 38px;
             background: linear-gradient(135deg, #2563eb, #7c3aed);
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
@@ -72,7 +70,6 @@
             border: 1px solid rgba(16,185,129,0.25);
             padding: 6px 14px; border-radius: 20px;
             font-size: 0.75rem; font-weight: 600;
-            white-space: nowrap;
         }
         .dot {
             width: 7px; height: 7px;
@@ -86,35 +83,33 @@
         /* ── HERO ── */
         .hero {
             max-width: 1100px; margin: 0 auto;
-            padding: 60px 24px 36px;
+            padding: 56px 24px 32px;
         }
         .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
+            display: inline-flex; align-items: center; gap: 7px;
             background: rgba(56,189,248,0.1);
             color: var(--blue);
             border: 1px solid rgba(56,189,248,0.25);
             padding: 6px 16px; border-radius: 20px;
             font-size: 0.75rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
         .hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-size: clamp(1.9rem, 4vw, 3rem);
             font-weight: 900;
-            letter-spacing: -1.5px;
-            line-height: 1.12;
-            margin-bottom: 18px;
-        }
-        .hero h1 span.grad {
-            background: linear-gradient(135deg, #38bdf8, #a855f7, #10b981);
+            letter-spacing: -1px;
+            line-height: 1.15;
+            background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 16px;
         }
         .hero-sub {
-            font-size: 1.05rem; color: var(--text-muted);
-            max-width: 620px; line-height: 1.65;
-            margin-bottom: 36px;
+            font-size: 1rem; color: var(--text-muted);
+            max-width: 600px; line-height: 1.6;
+            margin-bottom: 32px;
         }
         .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
         .btn-primary {
@@ -122,7 +117,7 @@
             background: linear-gradient(135deg, var(--blue-dk), #7c3aed);
             color: #fff; text-decoration: none;
             font-weight: 700; font-size: 0.9rem;
-            padding: 13px 26px; border-radius: 10px;
+            padding: 12px 24px; border-radius: 10px;
             box-shadow: 0 6px 20px rgba(37,99,235,0.4);
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -132,86 +127,45 @@
             background: rgba(255,255,255,0.05);
             color: var(--text-muted); text-decoration: none;
             font-weight: 600; font-size: 0.9rem;
-            padding: 13px 26px; border-radius: 10px;
+            padding: 12px 24px; border-radius: 10px;
             border: 1px solid var(--border-hl);
-            transition: background 0.2s, color 0.2s;
+            transition: background 0.2s;
         }
-        .btn-secondary:hover { background: rgba(255,255,255,0.09); color: var(--text); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.09); }
 
         /* ── STAT CARDS ── */
         .stats-grid {
-            max-width: 1100px; margin: 0 auto 36px;
+            max-width: 1100px; margin: 0 auto 32px;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 14px;
         }
         .stat-card {
             background: var(--surface2);
             border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 22px 18px;
+            padding: 20px 18px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
         .stat-card::before {
             content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
         }
-        .stat-card.c-blue::before { background: linear-gradient(90deg, var(--blue-dk), var(--blue)); }
-        .stat-card.c-purple::before { background: linear-gradient(90deg, #7c3aed, var(--purple)); }
-        .stat-card.c-green::before { background: linear-gradient(90deg, #059669, var(--green)); }
-        .stat-card.c-amber::before { background: linear-gradient(90deg, #d97706, var(--amber)); }
-        .stat-card.c-indigo::before { background: linear-gradient(90deg, var(--blue-dk), var(--indigo)); }
-        .stat-icon { font-size: 1.6rem; margin-bottom: 8px; }
+        .stat-card.blue::before { background: linear-gradient(90deg, var(--blue-dk), var(--blue)); }
+        .stat-card.purple::before { background: linear-gradient(90deg, #7c3aed, var(--purple)); }
+        .stat-card.green::before { background: linear-gradient(90deg, #059669, var(--green)); }
+        .stat-card.amber::before { background: linear-gradient(90deg, #d97706, var(--amber)); }
         .stat-num { font-size: 2rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 4px; }
         .stat-label { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.8px; }
 
-        /* ── PIPELINE INFO ── */
-        .pipeline-wrap {
-            max-width: 1100px; margin: 0 auto 36px;
-            padding: 0 24px;
-        }
-        .pipeline-card {
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px 32px;
-        }
-        .pipeline-title {
-            font-size: 1rem; font-weight: 700; color: var(--text);
-            margin-bottom: 20px;
-            display: flex; align-items: center; gap: 10px;
-        }
-        .pipeline-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 2px;
-        }
-        .pipeline-step {
-            display: flex; flex-direction: column;
-            align-items: center; text-align: center;
-            padding: 16px 12px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 10px;
-            position: relative;
-        }
-        .step-icon { font-size: 1.5rem; margin-bottom: 8px; }
-        .step-label { font-size: 0.78rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-        .step-desc { font-size: 0.7rem; color: var(--text-dim); line-height: 1.4; }
-        .step-arrow {
-            position: absolute; right: -10px; top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-dim); font-size: 0.8rem;
-            z-index: 1;
-        }
-
-        /* ── SEARCH ── */
+        /* ── SEARCH BAR ── */
         .search-wrap {
-            max-width: 1100px; margin: 0 auto 20px;
+            max-width: 1100px; margin: 0 auto 24px;
             padding: 0 24px;
         }
         .search-box {
@@ -224,12 +178,12 @@
             font-size: 0.95rem;
             font-family: inherit;
             outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: border-color 0.2s;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: 14px center;
         }
-        .search-box:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(56,189,248,0.1); }
+        .search-box:focus { border-color: var(--blue); }
         .search-box::placeholder { color: var(--text-dim); }
 
         /* ── TABS ── */
@@ -250,7 +204,7 @@
         .tab-btn:hover { border-color: var(--border-hl); color: var(--text); }
         .tab-btn.active { background: var(--blue-dk); border-color: var(--blue-dk); color: #fff; }
 
-        /* ── CONTENT ── */
+        /* ── CONTENT AREA ── */
         .content-wrap {
             max-width: 1100px; margin: 0 auto;
             padding: 0 24px 60px;
@@ -262,74 +216,85 @@
             padding: 36px 40px;
         }
 
-        /* Markdown Styles */
-        .md-content h1 { font-size: 1.8rem; font-weight: 800; color: var(--text); margin: 0 0 20px; letter-spacing: -0.5px; border-bottom: 2px solid var(--border); padding-bottom: 14px; }
-        .md-content h2 { font-size: 1.3rem; font-weight: 700; color: var(--blue); margin: 32px 0 14px; display: flex; align-items: center; gap: 10px; }
+        /* Markdown Styling */
+        .md-content h1 { font-size: 1.9rem; font-weight: 800; color: var(--text); margin: 0 0 20px; letter-spacing: -0.5px; border-bottom: 2px solid var(--border); padding-bottom: 14px; }
+        .md-content h2 { font-size: 1.35rem; font-weight: 700; color: var(--blue); margin: 32px 0 14px; display: flex; align-items: center; gap: 10px; }
         .md-content h2::before { content: ''; display: inline-block; width: 4px; height: 1.2em; background: var(--blue); border-radius: 2px; flex-shrink: 0; }
-        .md-content h3 { font-size: 1.08rem; font-weight: 700; color: var(--indigo); margin: 22px 0 10px; padding-left: 12px; border-left: 2px solid var(--indigo); }
-        .md-content h4 { font-size: 0.88rem; font-weight: 600; color: var(--text-muted); margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .md-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--indigo); margin: 22px 0 10px; }
+        .md-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-muted); margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
         .md-content p { margin: 0 0 14px; color: #cbd5e1; font-size: 0.95rem; line-height: 1.72; }
         .md-content strong { color: var(--text); font-weight: 700; }
         .md-content em { color: var(--amber); font-style: normal; font-weight: 500; }
         .md-content ul, .md-content ol { margin: 0 0 16px 20px; }
-        .md-content li { color: #cbd5e1; font-size: 0.93rem; line-height: 1.65; margin-bottom: 8px; }
-        .md-content li::marker { color: var(--blue); font-size: 1.1em; }
-        .md-content code { font-family: 'JetBrains Mono', monospace; background: rgba(56,189,248,0.1); color: var(--blue); padding: 2px 7px; border-radius: 5px; font-size: 0.85em; }
-        .md-content pre { background: #0b111f; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; overflow-x: auto; margin: 0 0 18px; }
+        .md-content li { color: #cbd5e1; font-size: 0.93rem; line-height: 1.65; margin-bottom: 7px; }
+        .md-content li::marker { color: var(--blue); }
+        .md-content code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(56,189,248,0.1);
+            color: var(--blue);
+            padding: 2px 7px; border-radius: 5px;
+            font-size: 0.85em;
+        }
+        .md-content pre {
+            background: #0b111f;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            overflow-x: auto;
+            margin: 0 0 18px;
+        }
         .md-content pre code { background: none; padding: 0; color: #a5f3fc; font-size: 0.88em; }
-        .md-content blockquote { border-left: 4px solid var(--purple); background: rgba(168,85,247,0.07); margin: 0 0 16px; padding: 14px 20px; border-radius: 0 10px 10px 0; }
+        .md-content blockquote {
+            border-left: 4px solid var(--purple);
+            background: rgba(168,85,247,0.07);
+            margin: 0 0 16px;
+            padding: 14px 20px;
+            border-radius: 0 10px 10px 0;
+        }
         .md-content blockquote p { color: var(--text-muted); margin: 0; }
-        .md-content table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
-        .md-content th { background: rgba(56,189,248,0.1); color: var(--blue); padding: 11px 14px; text-align: left; font-weight: 700; border: 1px solid var(--border); }
-        .md-content td { padding: 10px 14px; border: 1px solid var(--border); color: #cbd5e1; vertical-align: top; }
+        .md-content table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 0.88rem; }
+        .md-content th { background: rgba(56,189,248,0.1); color: var(--blue); padding: 10px 14px; text-align: left; font-weight: 700; border: 1px solid var(--border); }
+        .md-content td { padding: 9px 14px; border: 1px solid var(--border); color: #cbd5e1; vertical-align: top; }
         .md-content tr:hover td { background: rgba(255,255,255,0.03); }
         .md-content a { color: var(--blue); text-decoration: none; }
         .md-content a:hover { text-decoration: underline; }
         .md-content hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 
-        /* ── ABOUT SECTION ── */
-        .about-wrap {
-            max-width: 1100px; margin: 0 auto 36px;
-            padding: 0 24px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
+        /* Section badges */
+        .section-label {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            padding: 4px 12px; border-radius: 20px;
+            margin-bottom: 10px;
         }
-        .about-card {
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-        }
-        .about-card-icon { font-size: 1.8rem; margin-bottom: 12px; }
-        .about-card-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-        .about-card-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; }
+        .label-ai { background: rgba(129,140,248,0.12); color: var(--indigo); border: 1px solid rgba(129,140,248,0.2); }
+        .label-semi { background: rgba(16,185,129,0.12); color: var(--green); border: 1px solid rgba(16,185,129,0.2); }
+        .label-fin { background: rgba(245,158,11,0.12); color: var(--amber); border: 1px solid rgba(245,158,11,0.2); }
 
         /* ── FOOTER ── */
         .footer {
             background: var(--surface);
             border-top: 1px solid var(--border);
-            padding: 40px 28px;
+            padding: 36px 28px;
             text-align: center;
         }
-        .footer-brand { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-        .footer-sub { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 20px; line-height: 1.6; }
-        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-        .footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .footer-logo { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+        .footer-sub { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 16px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; }
         .footer-links a:hover { color: var(--blue); }
-        .footer-sig { font-size: 0.88rem; color: var(--text-dim); }
-        .footer-sig strong { color: var(--blue); font-size: 1rem; }
-        .footer-bar { height: 4px; background: linear-gradient(90deg, #2563eb, #7c3aed, #10b981); margin-top: 28px; border-radius: 2px; }
+        .footer-sig { margin-top: 20px; font-size: 0.85rem; color: var(--text-dim); }
+        .footer-sig strong { color: var(--blue); }
 
+        /* No-results message */
         #no-results { display: none; padding: 40px; text-align: center; color: var(--text-muted); }
 
-        @media (max-width: 640px) {
-            .hero { padding: 40px 16px 28px; }
+        @media (max-width: 600px) {
+            .hero { padding: 36px 16px 24px; }
             .report-card { padding: 22px 18px; }
             .navbar { padding: 12px 16px; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .pipeline-steps { grid-template-columns: 1fr; }
-            .step-arrow { display: none; }
         }
     </style>
 </head>
@@ -346,115 +311,52 @@
     </a>
     <div class="live-badge">
         <div class="dot"></div>
-        LIVE • 9PM IST
+        LIVE
     </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-badge">⚡ 24-Hour Autonomous Intelligence Sweep</div>
-    <h1>Daily <span class="grad">AI &amp; Semiconductor</span><br>Intelligence Briefing</h1>
+    <div class="hero-badge">⚡ 24-Hour Intelligence Sweep</div>
+    <h1>Daily AI &amp; Semiconductor<br>Intelligence Briefing</h1>
     <p class="hero-sub">
-        Fully autonomous synthesis of 100+ frontier articles covering General AI breakthroughs,
-        VLSI design, EDA automation, Angstrom-era silicon, Chiplets &amp; Foundry dynamics —
-        delivered every day at <strong>9 PM IST</strong>, completely free.
+        Autonomous synthesis of 100+ frontier articles covering General AI breakthroughs, 
+        VLSI design, EDA automation, Angstrom-era silicon, chiplets &amp; foundry dynamics — 
+        delivered every day at 9 PM IST.
     </p>
     <div class="hero-actions">
         <a class="btn-primary" href="#report">📋 Today's Report</a>
-        <a class="btn-secondary" href="https://github.com/mjaganmohan343/AI_Updates_Proj" target="_blank">⭐ GitHub</a>
-        <a class="btn-secondary" href="archive/" target="_blank">🗄️ Archive</a>
+        <a class="btn-secondary" href="https://github.com/mjaganmohan343/AI_Updates_Proj" target="_blank">⭐ GitHub Repo</a>
     </div>
 </section>
 
 <!-- STATS -->
-<div class="stats-grid">
-    <div class="stat-card c-blue">
-        <div class="stat-icon">📰</div>
+<section class="stats-grid">
+    <div class="stat-card blue">
         <div class="stat-num" style="color:var(--blue);">100+</div>
         <div class="stat-label">Articles / Day</div>
     </div>
-    <div class="stat-card c-purple">
-        <div class="stat-icon">🗂️</div>
+    <div class="stat-card purple">
         <div class="stat-num" style="color:var(--purple);">2</div>
         <div class="stat-label">Focus Categories</div>
     </div>
-    <div class="stat-card c-green">
-        <div class="stat-icon">💸</div>
+    <div class="stat-card green">
         <div class="stat-num" style="color:var(--green);">$0</div>
         <div class="stat-label">Monthly Cost</div>
     </div>
-    <div class="stat-card c-amber">
-        <div class="stat-icon">🕘</div>
+    <div class="stat-card amber">
         <div class="stat-num" style="color:var(--amber);">9PM</div>
-        <div class="stat-label">IST Daily</div>
+        <div class="stat-label">IST Daily Delivery</div>
     </div>
-    <div class="stat-card c-indigo">
-        <div class="stat-icon">🤖</div>
+    <div class="stat-card blue">
         <div class="stat-num" style="color:var(--indigo);">AI</div>
         <div class="stat-label">Gemini Synthesis</div>
     </div>
-</div>
-
-<!-- PIPELINE -->
-<div class="pipeline-wrap">
-    <div class="pipeline-card">
-        <div class="pipeline-title">⚙️ How It Works — $0 Autonomous Pipeline</div>
-        <div class="pipeline-steps">
-            <div class="pipeline-step">
-                <div class="step-icon">📡</div>
-                <div class="step-label">RSS Ingestion</div>
-                <div class="step-desc">Google News 24h, ArXiv cs.AI/cs.AR, EE Times, TechCrunch</div>
-                <div class="step-arrow">→</div>
-            </div>
-            <div class="pipeline-step">
-                <div class="step-icon">🧠</div>
-                <div class="step-label">AI Synthesis</div>
-                <div class="step-desc">Google Gemini API (Free Tier) generates executive analysis</div>
-                <div class="step-arrow">→</div>
-            </div>
-            <div class="pipeline-step">
-                <div class="step-icon">📧</div>
-                <div class="step-label">Email Dispatch</div>
-                <div class="step-desc">Rich HTML executive briefing via Resend HTTPS API</div>
-                <div class="step-arrow">→</div>
-            </div>
-            <div class="pipeline-step">
-                <div class="step-icon">🌐</div>
-                <div class="step-label">Web Publish</div>
-                <div class="step-desc">Full technical report pushed to GitHub Pages</div>
-                <div class="step-arrow">→</div>
-            </div>
-            <div class="pipeline-step">
-                <div class="step-icon">⏱️</div>
-                <div class="step-label">Auto-Schedule</div>
-                <div class="step-desc">GitHub Actions cron: daily at 9 PM IST (15:30 UTC)</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ABOUT CARDS -->
-<div class="about-wrap">
-    <div class="about-card">
-        <div class="about-card-icon">🤖</div>
-        <div class="about-card-title">Category A — General AI</div>
-        <div class="about-card-desc">Frontier models, reasoning breakthroughs, agentic frameworks, open-weight releases, test-time compute, benchmark records, and industry strategy from OpenAI, Anthropic, Google DeepMind, Meta AI, and beyond.</div>
-    </div>
-    <div class="about-card">
-        <div class="about-card-icon">🔬</div>
-        <div class="about-card-title">Category B — Semiconductors &amp; VLSI</div>
-        <div class="about-card-desc">EDA automation (Synopsys/Cadence/Siemens), Angstrom-era node transitions (TSMC N2/A16, Intel 18A, Samsung SF2), GAAFET &amp; BSPDN, 3D-IC chiplets, CoWoS packaging, HBM4, PPA benchmarks, and foundry economics.</div>
-    </div>
-    <div class="about-card">
-        <div class="about-card-icon">💰</div>
-        <div class="about-card-title">Financial &amp; Strategic Shifts</div>
-        <div class="about-card-desc">Venture capital funding rounds, sovereign AI funds, US CHIPS Act grants, European Chips Act, M&amp;A activity, export controls, geopolitical dynamics, and deep-tech startup valuations in the AI-silicon ecosystem.</div>
-    </div>
-</div>
+</section>
 
 <!-- SEARCH -->
 <div class="search-wrap">
-    <input type="text" class="search-box" id="searchBox" placeholder="🔍  Search today's briefing... (e.g. TSMC, OpenAI, BSPDN, HBM4, Anthropic)">
+    <input type="text" class="search-box" id="searchBox" placeholder="Search today's briefing... (e.g. TSMC, OpenAI, BSPDN)">
 </div>
 
 <!-- TABS -->
@@ -465,81 +367,109 @@
     <button class="tab-btn" data-filter="fin">💰 Financial</button>
 </div>
 
-<!-- REPORT -->
+<!-- REPORT CONTENT -->
 <div class="content-wrap">
-    <div class="report-card" id="report">
-        <div class="md-content" id="md-output">
-            <div style="text-align:center;padding:60px 20px;color:var(--text-muted);">
-                <div style="font-size:3rem;margin-bottom:16px;">⏳</div>
-                <h2 style="color:var(--text);margin-bottom:12px;">Today's Report Loading...</h2>
-                <p>The pipeline runs daily at <strong style="color:var(--blue);">9:00 PM IST</strong>.<br>
-                Check back after 9 PM IST for today's fresh AI &amp; Semiconductor briefing.</p>
-                <div style="margin-top:28px;">
-                    <a href="https://github.com/mjaganmohan343/AI_Updates_Proj/actions" target="_blank"
-                       style="display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.1);color:var(--blue);border:1px solid rgba(56,189,248,0.25);padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85rem;">
-                        ⚙️ Check GitHub Actions Status
-                    </a>
-                </div>
-            </div>
+    <div class="report-card">
+        <div class="md-content" id="report">
+            <p style="color:var(--text-muted);text-align:center;padding:40px 0;">Loading today's intelligence briefing...</p>
         </div>
         <div id="no-results">
-            <p>🔍 No results for your search. Try a different keyword.</p>
+            <p>🔍 No results found for your search. Try a different keyword.</p>
         </div>
     </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-    <div class="footer-brand">⚡ AI &amp; Semiconductor Intelligence Briefing</div>
-    <div class="footer-sub">
-        Autonomous daily intelligence pipeline • $0 monthly infrastructure<br>
-        Built with GitHub Actions + Google Gemini API (Free) + GitHub Pages + Resend
-    </div>
+    <div class="footer-logo">⚡ AI &amp; Semiconductor Intelligence</div>
+    <div class="footer-sub">Autonomous Daily Briefing System &nbsp;•&nbsp; $0 Infrastructure &nbsp;•&nbsp; GitHub Actions + Gemini API + GitHub Pages</div>
     <div class="footer-links">
         <a href="https://github.com/mjaganmohan343/AI_Updates_Proj" target="_blank">📂 Repository</a>
-        <a href="https://github.com/mjaganmohan343/AI_Updates_Proj/actions" target="_blank">⚙️ Pipeline Status</a>
-        <a href="archive/" target="_blank">🗄️ Report Archive</a>
-        <a href="https://github.com/mjaganmohan343" target="_blank">👤 GitHub Profile</a>
+        <a href="https://github.com/mjaganmohan343/AI_Updates_Proj/actions" target="_blank">⚙️ Actions</a>
+        <a href="archive/" target="_blank">🗄️ Archive</a>
     </div>
-    <div class="footer-sig">Curated &amp; Engineered by <strong>MJM</strong> — Marpu Jagan Mohan</div>
-    <div class="footer-bar"></div>
+    <div class="footer-sig">Curated &amp; Powered by <strong>MJM</strong> — Marpu Jagan Mohan</div>
 </footer>
 
 <script>
-// ── MARKDOWN RENDERING ──
-// The pipeline will inject real content here each day.
-// For now show the placeholder (above). When pipeline runs, this variable will be replaced.
-const reportMarkdown = ``;  // Pipeline injects content here daily
+// Render markdown content
+const rawMarkdown = `# Daily AI & Semiconductor Briefing: November 09, 2026
 
-marked.setOptions({ breaks: true, gfm: true });
+## Executive Overview
+The deep-tech landscape on November 9, 2026, is characterized by an intense capital and engineering convergence across foundational AI models, custom silicon design, and advanced packaging nodes. As hyperscalers institutionalize multi-billion-dollar infrastructure budgets, the bottleneck has definitively shifted from raw algorithmic training scale to silicon memory bandwidth, yield optimization in angstrom-class nodes, and high-density 3D-IC packaging. 
 
-const mdOutput = document.getElementById('md-output');
-const noResults = document.getElementById('no-results');
+Simultaneously, the commercialization vectors for generative AI are maturing. Enterprises are moving past general-purpose chat wrappers toward deeply integrated, specialized inference endpoints that demand rigorous co-design of software runtimes and hardware execution units. The intersection of EDA tooling optimization, automated physical layout verification, and novel memory-logic integration (such as exploring 3D DRAM variants) highlights an industry racing to sustain Moore's Law scaling in the face of escalating thermal and power walls.
 
-if (reportMarkdown && reportMarkdown.trim().length > 50) {
-    try {
-        mdOutput.innerHTML = marked.parse(reportMarkdown);
-    } catch(e) {
-        mdOutput.innerHTML = '<pre style="color:#94a3b8;white-space:pre-wrap;">' + reportMarkdown + '</pre>';
-    }
+## 1. General AI & Open Source Developments
+
+### Frontier Models & Reasoning
+- **Overview:** Meta and Anthropic continue to aggressively redefine the frontier model deployment landscape. Meta’s structural pivot incorporates specialized models tailored specifically for its Muse and Meta AI ecosystems, shifting away from monolithic general architectures toward modular, domain-optimized endpoints.
+- **Performance & Benchmarks:** Specialized variants show marked improvements in task-specific reasoning metrics, yielding lower inference latency (sub-50ms TTFT on optimized clusters) and heightened parameter efficiency when deployed across distributed enterprise backends.
+- **Future Impact:** The deprecation of monolithic models in favor of tightly coupled, purpose-built architectures allows hyperscalers to drastically optimize cluster utilization, reducing total cost of ownership (TCO) for massive corporate deployments.
+
+### Agentic Frameworks & Test-Time Compute
+- **Overview:** Industry focus has intensely pivoted toward autonomous agentic workflows capable of multi-step code synthesis, iterative debugging, and complex enterprise resource navigation. Companies like OpenAI and Anthropic are pushing the boundaries of test-time compute scaling.
+- **Performance & Benchmarks:** While test-time compute loops increase per-query token consumption, they yield exponential error-rate reductions on complex software engineering evaluations (such as SWE-bench), dropping resolution costs per solved issue by over 40%.
+- **Future Impact:** This paradigm shift demands hardware architectures capable of sustaining ultra-high memory bandwidth during dynamic search-and-verify loops, directly influencing the design specifications of next-generation AI accelerators.
+
+### Open Weights & Efficiency Innovations
+- **Overview:** The open-weights ecosystem is experiencing a talent and infrastructure migration, epitomized by key executive movements such as Meta’s leadership transition to high-performance inference startups like Fireworks AI.
+- **Performance & Benchmarks:** Advanced quantization pipelines (FP8/INT4 mixed-precision schemas) deployed via optimized runtimes allow sub-70B parameter models to run locally on workstation-class VRAM footprints with minimal perplexity degradation.
+- **Future Impact:** Private enterprise adoption is accelerating as local data sovereignty requirements are met without sacrificing the reasoning capabilities previously restricted to hyperscale cloud APIs.
+
+## 2. Semiconductors, VLSI & Hardware AI
+
+### EDA & Autonomous Physical Design
+- **Overview:** The symbiosis between AI workloads and electronic design automation (EDA) reached new milestones with joint validations between IP providers and EDA heavyweights, such as Expedera’s edge AI subsystem pairing with Cadence design environments.
+- **Technical Specs & VLSI Impact:** AI-driven physical synthesis and floorplanning tools are driving double-digit PPA gains, successfully minimizing Design Rule Checking (DRC) violations, mitigating IR drop in dense standard cells, and accelerating timing closure cycles by up to 30%.
+- **Market & Foundry Context:** Hyperscalers and fabless ASIC designers are increasingly mandating autonomous AI design assistants to tape out complex multi-die SoCs within compressed time-to-market windows.
+
+### Angstrom Nodes & Advanced Transistor Architecture
+- **Overview:** Foundries are aggressively refining sub-2nm process nodes, balancing GAAFET implementations with Backside Power Delivery Networks (BSPDN) to combat severe interconnect congestion.
+- **Technical Specs & VLSI Impact:** Implementation of backside power routing (such as Intel’s PowerVia or TSMC's equivalent N2 implementations) reduces IR drop by up to 30% and enables standard cell height scaling down to sub-120nm pitches, yielding significant frequency gains at iso-power.
+- **Market & Foundry Context:** Wafer pricing for leading-edge nodes continues to command a steep premium, driving meticulous capital allocation and strategic supply chain diversification among top-tier fabless chipmakers.
+
+### Advanced Packaging & Custom Accelerators
+- **Overview:** Advanced packaging remains the critical path for high-performance AI hardware. Recent industry analysis highlights TSMC's exploration of 3D DRAM manufacturing capabilities to support Nvidia's future accelerator roadmaps.
+- **Technical Specs & VLSI Impact:** By moving from 2.5D packaging (CoWoS) to true 3D-IC stacking with fine-pitch hybrid bonding (<1µm bump pitch), inter-die interconnect bandwidth is projected to surpass 10 TB/s, drastically mitigating the von Neumann memory bottleneck for massive LLM inference workloads.
+- **Market & Foundry Context:** CoWoS and EMIB packaging capacities remain fully booked through hyperscale capex commitments, creating structural supply chain bottlenecks that favor well-capitalized fabless buyers.
+
+## 3. Financial, Strategic & Geopolitical Shifts
+- **Strategic M&A & Joint Ventures:** Major institutional investments continue to flow into the hardware ecosystem, exemplified by Ardian securing a €1 billion specialized semiconductor fund backed by Middle Eastern capital to scale European and global chip design platforms.
+- **Venture Capital & Sovereign Funding:** Sovereign AI initiatives and regional chip acts (US CHIPS Act, European Chips Act) are increasingly prioritizing domestic packaging and analog/power semiconductor manufacturing to insulate critical infrastructure from geopolitical friction.
+- **Supply Chain & Geopolitical Dynamics:** Recent data reveals a sharp contraction in direct global semiconductor equipment and finished chip sales to China, driven by tightening export controls. This regulatory pressure is accelerating dual-supply-chain manufacturing architectures across both logic and memory fabrication sectors.`;
+
+marked.setOptions({
+    breaks: true,
+    gfm: true
+});
+
+try {
+    document.getElementById('report').innerHTML = marked.parse(rawMarkdown);
+} catch(e) {
+    document.getElementById('report').innerHTML = '<pre style="color:#94a3b8;white-space:pre-wrap;">' + rawMarkdown + '</pre>';
 }
 
-const originalHTML = mdOutput.innerHTML;
-
-// ── SEARCH ──
+// Search functionality
 const searchBox = document.getElementById('searchBox');
+const reportEl = document.getElementById('report');
+const noResults = document.getElementById('no-results');
+const originalHTML = reportEl.innerHTML;
+
 searchBox.addEventListener('input', function() {
     const q = this.value.trim().toLowerCase();
     if (!q) {
-        mdOutput.innerHTML = originalHTML;
+        reportEl.innerHTML = originalHTML;
         noResults.style.display = 'none';
         return;
     }
-    const text = mdOutput.innerText || mdOutput.textContent;
+    const text = reportEl.innerText || reportEl.textContent;
     if (text.toLowerCase().includes(q)) {
-        mdOutput.innerHTML = originalHTML;
+        // Highlight matches
+        reportEl.innerHTML = originalHTML;
         noResults.style.display = 'none';
-        const walker = document.createTreeWalker(mdOutput, NodeFilter.SHOW_TEXT);
+        // Simple highlight pass
+        const walker = document.createTreeWalker(reportEl, NodeFilter.SHOW_TEXT);
         const nodes = [];
         while (walker.nextNode()) nodes.push(walker.currentNode);
         nodes.forEach(node => {
@@ -553,23 +483,28 @@ searchBox.addEventListener('input', function() {
             }
         });
     } else {
-        mdOutput.innerHTML = '';
+        reportEl.innerHTML = '';
         noResults.style.display = 'block';
     }
 });
 
-// ── TABS ──
+// Tab filter
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         const filter = this.dataset.filter;
         searchBox.value = '';
-        mdOutput.innerHTML = originalHTML;
+        reportEl.innerHTML = originalHTML;
         noResults.style.display = 'none';
-        if (filter !== 'all') {
-            const keywords = { ai: 'General AI', semi: 'Semiconductor', fin: 'Financial' };
-            searchBox.value = keywords[filter] || '';
+        if (filter === 'ai') {
+            searchBox.value = 'General AI';
+            searchBox.dispatchEvent(new Event('input'));
+        } else if (filter === 'semi') {
+            searchBox.value = 'Semiconductor';
+            searchBox.dispatchEvent(new Event('input'));
+        } else if (filter === 'fin') {
+            searchBox.value = 'Financial';
             searchBox.dispatchEvent(new Event('input'));
         }
     });
