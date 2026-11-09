@@ -10,15 +10,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # API Keys & URLs
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-WEBSITE_URL = os.getenv("WEBSITE_URL", "https://github.com/your-username/AI_Updates_Proj")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+WEBSITE_URL = os.getenv("WEBSITE_URL", "").strip() or "https://github.com/your-username/AI_Updates_Proj"
 
 # Delivery Configurations
 EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").lower() in ("true", "1", "yes")
-SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
-SMTP_USER = os.getenv("SMTP_USER", "")
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
+SMTP_SERVER = os.getenv("SMTP_SERVER", "").strip() or "smtp.gmail.com"
+
+# Safely parse port even if passed as empty string
+smtp_port_raw = os.getenv("SMTP_PORT", "").strip()
+SMTP_PORT = int(smtp_port_raw) if smtp_port_raw.isdigit() else 587
+
+SMTP_USER = os.getenv("SMTP_USER", "").strip()
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "").strip()
 EMAIL_RECIPIENTS = [r.strip() for r in os.getenv("EMAIL_RECIPIENTS", "").split(",") if r.strip()]
 
 TELEGRAM_ENABLED = os.getenv("TELEGRAM_ENABLED", "false").lower() in ("true", "1", "yes")
