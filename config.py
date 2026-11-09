@@ -40,21 +40,24 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 FEEDS = {
     "Category_A_General_AI": [
         # Google News RSS with 24h freshness filter (when:1d)
-        "https://news.google.com/rss/search?q=(OpenAI+OR+Anthropic+OR+DeepMind+OR+Meta+AI+OR+LLM+OR+%22open+source+model%22)+when:1d&hl=en-US&gl=US&ceid=US:en",
+        "https://news.google.com/rss/search?q=(OpenAI+OR+Anthropic+OR+DeepMind+OR+Meta+AI+OR+LLM+OR+%22open+source+model%22+OR+%22reasoning+model%22)+when:1d&hl=en-US&gl=US&ceid=US:en",
         # arXiv cs.AI and cs.LG (Artificial Intelligence & Machine Learning)
         "https://rss.arxiv.org/rss/cs.AI",
         "https://rss.arxiv.org/rss/cs.LG",
         # VentureBeat AI
         "https://venturebeat.com/category/ai/feed/",
+        # TechCrunch AI
+        "https://techcrunch.com/category/artificial-intelligence/feed/",
     ],
     "Category_B_Semiconductors_VLSI": [
         # Google News RSS with 24h freshness filter for VLSI, EDA, Semiconductor
-        "https://news.google.com/rss/search?q=(VLSI+OR+semiconductor+OR+%22chip+design%22+OR+TSMC+OR+%22EDA+tools%22+OR+Synopsys+OR+Cadence+OR+ASIC+OR+chiplet+OR+neuromorphic)+when:1d&hl=en-US&gl=US&ceid=US:en",
+        "https://news.google.com/rss/search?q=(VLSI+OR+semiconductor+OR+%22chip+design%22+OR+TSMC+OR+%22EDA+tools%22+OR+Synopsys+OR+Cadence+OR+ASIC+OR+chiplet+OR+neuromorphic+OR+RibbonFET+OR+CoWoS)+when:1d&hl=en-US&gl=US&ceid=US:en",
         # arXiv cs.AR (Hardware Architecture & VLSI)
         "https://rss.arxiv.org/rss/cs.AR",
-        # Tom's Hardware / Semi / Tech Feeds
+        # Semiconductor Engineering & Hardware Feeds
+        "https://semiengineering.com/feed/",
+        "https://www.servethehome.com/feed/",
         "https://www.tomshardware.com/feeds/all",
-        # EE Times (Electronics Engineering)
         "https://www.eetimes.com/feed/",
     ]
 }

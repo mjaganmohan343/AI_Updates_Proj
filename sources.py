@@ -29,7 +29,7 @@ def is_within_24_hours(entry: Dict[str, Any], hours: int = 30) -> bool:
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     return published_dt >= cutoff
 
-def fetch_feed_entries(url: str, max_items: int = 15) -> List[Dict[str, str]]:
+def fetch_feed_entries(url: str, max_items: int = 25) -> List[Dict[str, str]]:
     """Fetches and parses a single RSS feed with custom headers and timeout."""
     items = []
     try:
