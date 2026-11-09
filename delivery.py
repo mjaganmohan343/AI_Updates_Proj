@@ -144,6 +144,16 @@ def build_html_email(email_briefing_text: str, date_str: str) -> str:
                                 </tr>
                             </table>
 
+                            <!-- Personal Signature -->
+                            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #1e293b; text-align: left;">
+                                <div style="font-size: 12.5px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px;">
+                                    Curated & Prepared by:
+                                </div>
+                                <div style="font-size: 16px; font-weight: 700; color: #38bdf8; letter-spacing: 0.5px; margin-top: 4px;">
+                                    — MJM
+                                </div>
+                            </div>
+
                         </td>
                     </tr>
 
@@ -683,6 +693,11 @@ def dispatch_email(email_briefing: str):
 
     today_str = datetime.now().strftime("%B %d, %Y")
     subject = f"⚡ Daily AI & Semiconductor Briefing: {today_str}"
+    
+    # Ensure personalized signature
+    if "MJM" not in email_briefing:
+        email_briefing = email_briefing.strip() + "\n\n— MJM"
+        
     html_email = build_html_email(email_briefing, today_str)
 
     # Method 1: Resend HTTP API (Port 443 - Never blocked by cloud firewalls)

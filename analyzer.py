@@ -31,6 +31,8 @@ Target Tone: Crisp, executive, highly informative.
   * [Highlight 5: Strategic/Geopolitical shift, e.g. foundry allocation, export restrictions]
 - [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> [INSERT_WEBSITE_URL]"
 
+Curated by: MJM
+
 --- SECTION 2: WEB PAGE FULL REPORT ---
 
 # Daily AI & Semiconductor Briefing: [TODAY'S DATE]
