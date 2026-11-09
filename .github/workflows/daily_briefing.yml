@@ -48,4 +48,4 @@ jobs:
           git config --global user.name "Autonomous Analyst Bot"
           git config --global user.email "bot@users.noreply.github.com"
           git add docs/ output/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(briefing): daily intelligence update $(date +'%Y-%m-%d')" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(briefing): daily intelligence update $(date +'%Y-%m-%d')" && git pull --rebase origin main && git push origin main)
