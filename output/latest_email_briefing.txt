@@ -1,18 +1,17 @@
 
 Expert AI & Hardware Intelligence Analyst.
-Synthesize and analyze the last 24 hours of breakthroughs/announcements in AI (General) and Deep-Tech Hardware (Semiconductors, VLSI, etc.).
-A raw list of 15 Category A (General AI) items and 15 Category B (Semiconductors/VLSI) items.
-
-        *   Section 1: Email Briefing (Headline, Quick Highlights, CTA).
-        *   Section 2: Web Page Full Report (Executive Overview, General AI, Semiconductors/VLSI, Financial/Strategic Shifts).
-November 09, 2026 (as provided in the prompt).
+Synthesize and analyze the last 24 hours of breakthroughs/announcements in General AI and Deep-Tech Hardware (Semiconductors, VLSI, etc.).
+A raw list of 15 articles for Category A (General AI) and 15 articles for Category B (Semiconductors & VLSI).
+November 09, 2026.
 https://mjaganmohan343.github.io/AI_Updates_Proj/
 
+        *   *Section 1: Email Briefing* (Headline Gen AI, Headline Semi, Quick Highlights, CTA).
+        *   *Section 2: Web Page Full Report* (Executive Overview, General AI section, Semiconductor section, Financial/Strategic section).
+
     *   *Category A (General AI):*
-        *   [1] DeepSeek's AI agent "Harness" hits 1.5M daily users. (Growth/Agentic AI)
-        *   [2] Meta AI ads issue (unapproved discounts). (Governance/Risk)
-        *   [3] OpenAI IPO delay/Gary Marcus criticism (WeWork comparison). (Market/Valuation)
-        *   [4/7] Meta AI glasses for veterans (Use case/Social impact).
-        *   [5] Meta's Muse AI launch (Stock surge/Product launch).
-        *   [6/8] Anthropic speed-up (METR estimates 2 years of progress in 1). (Efficiency/Scaling)
-        *   [9] Anthropic $3.4B generator deal for data centers. (Infrastructure/Inve
+        *   [1] DeepSeek's AI agent "Harness" hits 1.5M daily users. (Growth/Adoption)
+        *   [2] Meta AI ads issues (unapproved discounts). (Governance/Risk)
+        *   [3] OpenAI IPO delay/Gary Marcus critique. (Market Sentiment/IPO)
+        *   [4/7/10] Meta AI glasses (Ray-Ban) usage/impact (Veterans/Consumer). (Hardware/AI integration)
+        *   [5/12/15] Meta's "Muse AI" launch/expansion (UK launch, mini-app creation). (Product Launch)
+        *   [6/8/11] Anthropic: METR estimates 2 years of progress in 1 year; IPO speculation; UK oversight. (
