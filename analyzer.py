@@ -70,12 +70,44 @@ Target Tone: Professional, direct, highly informative.
 - [Summary of funding, investments, or mergers in the hardware/AI space over the last 24 hours]
 """
 
+def get_available_models(api_key: str) -> list:
+    """Dynamically fetches models that support generateContent for this API key."""
+    candidates = []
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}"
+        resp = requests.get(url, timeout=10)
+        if resp.status_code == 200:
+            data = resp.json()
+            for m in data.get("models", []):
+                supported = m.get("supportedGenerationMethods", [])
+                if "generateContent" in supported:
+                    # Strip 'models/' prefix if present
+                    name = m["name"].replace("models/", "")
+                    candidates.append(name)
+    except Exception as e:
+        print(f"[Notice] Could not dynamically list models: {e}")
+        
+    # Prioritize flash models, then pro models
+    priority = ["gemini-2.0-flash", "gemini-2.0-flash-exp", "gemini-1.5-flash-latest", "gemini-1.5-flash-002", "gemini-1.5-flash-001", "gemini-1.5-pro", "gemini-pro"]
+    sorted_models = []
+    for p in priority:
+        if p in candidates:
+            sorted_models.append(p)
+            
+    # Add any remaining candidates
+    for c in candidates:
+        if c not in sorted_models:
+            sorted_models.append(c)
+            
+    return sorted_models if sorted_models else priority
+
 def call_gemini(prompt: str, api_key: str) -> str:
     """
     Calls Google Gemini API (Free Tier).
-    Uses direct REST API to gemini-2.5-flash or gemini-1.5-flash for maximum portability.
+    Automatically queries valid active models on the key.
     """
-    models = ["gemini-2.5-flash", "gemini-1.5-flash"]
+    models = get_available_models(api_key)
+    print(f"🔍 Discovered available Gemini models: {models[:4]}")
     
     for model in models:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
@@ -96,13 +128,15 @@ def call_gemini(prompt: str, api_key: str) -> str:
         }
         
         try:
+            print(f"🤖 Calling model: {model}...")
             resp = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=60)
             if resp.status_code == 200:
                 data = resp.json()
                 text = data["candidates"][0]["content"]["parts"][0]["text"]
+                print(f"✓ Model {model} responded successfully!")
                 return text
             else:
-                print(f"[Notice] Model {model} returned status {resp.status_code}: {resp.text[:120]}")
+                print(f"[Notice] Model {model} returned status {resp.status_code}: {resp.text[:140]}")
         except Exception as e:
             print(f"[Notice] Failed calling {model}: {e}")
             
