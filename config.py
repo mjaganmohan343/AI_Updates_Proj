@@ -14,7 +14,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 WEBSITE_URL = os.getenv("WEBSITE_URL", "").strip() or "https://github.com/your-username/AI_Updates_Proj"
 
 # Delivery Configurations
-EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").lower() in ("true", "1", "yes")
+EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").strip().lower().strip("\"'") in ("true", "1", "yes")
 SMTP_SERVER = os.getenv("SMTP_SERVER", "").strip() or "smtp.gmail.com"
 
 # Safely parse port even if passed as empty string
