@@ -2,8 +2,8 @@ name: Daily AI & Semiconductor Briefing
 
 on:
   schedule:
-    # Runs daily at 06:00 UTC (11:30 AM IST) - completely free on GitHub Actions
-    - cron: '0 6 * * *'
+    # Runs daily at 15:30 UTC (9:00 PM IST) - completely free on GitHub Actions
+    - cron: '30 15 * * *'
   workflow_dispatch: # Allows manual trigger anytime from the GitHub website
 
 jobs:
