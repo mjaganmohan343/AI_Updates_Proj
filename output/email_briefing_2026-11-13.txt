@@ -1,0 +1,13 @@
+Target Tone: Crisp, executive, highly informative.
+
+- Top Headline of the Day (General AI): [OpenAI Launches ChatGPT Wallet & Retires Robotics Team] OpenAI has debuted ChatGPT Wallet to empower autonomous AI agents for financial transactions, while simultaneously dismantling its dedicated robotics division to pivot entirely toward generalized foundation model architectures running physical hardware.
+- Top Headline of the Day (Semiconductor/VLSI AI): [GlobalFoundries Breaks Ground on $10B Malta Facility] GlobalFoundries has officially broken ground on a $10B leading-edge capital expansion project in New York under a landmark U.S.-Japan framework, fortifying domestic supply chains amid broader sector-wide valuation corrections.
+- Key Performance & Architecture Highlights:
+  * Model/Software metric: Meta’s expanded Muse AI suite integrates low-cost agentic models (Muse Ember) across Chrome extensions with automated voice calling capabilities, driving multi-step task execution down to single-digit latency thresholds.
+  * Hardware/PPA metric: Applied Materials (AMAT) and TSMC reported record-breaking quarterly systems sales and NT$587 billion monthly revenues, proving robust silicon capital expenditure despite cyclical foundry valuation jitters.
+  * Packaging & Interconnect metric: Advanced CoWoS packaging configurations and multi-terabit optical interconnect demands continue to push yield tolerances, with packaging lead times remaining the primary bottleneck for hyperscale AI accelerator deployments.
+  * Infrastructure & Capital metric: Wall Street prepares for Anthropic’s impending $1.4 trillion IPO valuation milestone, signalling a massive structural repricing of frontier AI enterprise software assets and heavy capital commitments.
+  * Strategic/Geopolitical shift: Geopolitical friction spikes as a China-nexus threat actor deploys specialized AI tooling explicitly targeting U.S. defense contractors and domestic semiconductor manufacturing facilities.
+- [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> https://mjaganmohan343.github.io/AI_Updates_Proj/"
+
+Curated by: MJM
