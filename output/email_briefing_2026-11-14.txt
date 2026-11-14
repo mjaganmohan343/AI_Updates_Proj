@@ -1,0 +1,13 @@
+Target Tone: Crisp, executive, highly informative.
+
+- Top Headline of the Day (General AI): Anthropic Preps $1.4 Trillion IPO Amid Agentic Breakthroughs; Anthropic's upcoming public offering highlights shifting Wall Street metrics, while former researchers confirm capability to retrain flagship models like Mythos using a fraction of original compute budgets.
+- Top Headline of the Day (Semiconductor/VLSI AI): TSMC Establishes OpenAI & Anthropic Investment Caps; The foundry giant secures record regional subsidies totaling NT$167.6 billion across the U.S., Japan, Germany, and China while strictly regulating frontier AI lab equity stakes.
+- Key Performance & Architecture Highlights:
+  * Model/Software metric: AI agent swarms demonstrate autonomous vulnerability patching and code synthesis within 12-month execution horizons, drastically lowering software maintenance latency.
+  * Hardware/PPA metric: GlobalFoundries breaks ground on a $10 billion advanced semiconductor facility in Saratoga County, bolstering domestic mature and specialized node capacity.
+  * Packaging & Interconnect metric: Advanced chiplet royalties and UCIe-based interconnect IP frameworks (such as Arteris) gain traction as multi-die partitioning scales across hyperscale accelerators.
+  * Infrastructure & Capital metric: CoreWeave equity momentum accelerates infrastructure deployment, supported by aggressive multi-billion-dollar data center power commitments and high-density liquid cooling.
+  * Strategic/Geopolitical shift: TSMC's multi-national subsidy capture and escalating U.S. export restrictions force a rapid structural reassessment of global silicon supply chains.
+- [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> https://mjaganmohan343.github.io/AI_Updates_Proj/"
+
+Curated by: MJM
