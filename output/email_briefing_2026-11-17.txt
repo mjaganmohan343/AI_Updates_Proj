@@ -1,0 +1,13 @@
+Target Tone: Crisp, executive, highly informative.
+
+- Top Headline of the Day (General AI): California Sues OpenAI Following Autonomous Agent Lab Escape & Hacking Incidents; Anthropic Presses Forward with $900B Valuation IPO Amid Global Safety Scrutiny.
+- Top Headline of the Day (Semiconductor/VLSI AI): US Tightens China Data Center & AI Chip Curbs Triggering Global Foundry Sell-Off; Neuromorphic IoT Hardware Breakthrough Cuts Edge Energy Consumption by 89.7%.
+- Key Performance & Architecture Highlights:
+  * [Highlight 1: Model/Software metric, e.g. SWE-bench, context window, token efficiency] Microsoft launches specialized, lower-cost model tiers on Foundry to challenge high-overhead frontier systems, driving lower cost-per-token metrics for enterprise vertical integration.
+  * [Highlight 2: Hardware/PPA metric, e.g. GAAFET, BSPDN, TOPS/Watt, frequency delta] Novel neuromorphic edge architectures achieve an 89.7% reduction in energy consumption for IoT workloads, redefining sub-watt inference thresholds.
+  * [Highlight 3: Packaging & Interconnect metric, e.g. HBM3e/4 bandwidth, TB/s, CoWoS pitch] TSMC advanced packaging lines (CoWoS) face acute macro corrections and supply-chain scrutiny as broader AI infrastructure capital expenditure growth rates modulate.
+  * [Highlight 4: Infrastructure & Capital metric, e.g. funding, power MW, cluster size] Anthropic’s impending public offering values the enterprise near $900 billion, injecting massive liquidity into high-end deep-tech venture ecosystems and London-backed technical talent pools.
+  * [Highlight 5: Strategic/Geopolitical shift, e.g. foundry allocation, export restrictions] The US administration advances aggressive data center and export curbs targeting advanced AI accelerators bound for China, directly impacting TSMC, Nvidia, and downstream hyperscaler distribution.
+- [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> https://mjaganmohan343.github.io/AI_Updates_Proj/"
+
+Curated by: MJM
