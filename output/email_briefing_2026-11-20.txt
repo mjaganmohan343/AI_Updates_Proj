@@ -1,0 +1,13 @@
+Target Tone: Crisp, executive, highly informative.
+
+- Top Headline of the Day (General AI): Anthropic IPO Bust and Riemann Hypothesis Milestone; A rocky public debut and a $4 trillion broader market tech correction occur alongside groundbreaking claims of an AI-assisted mathematical proof of the 167-year-old Riemann Hypothesis.
+- Top Headline of the Day (Semiconductor/VLSI AI): Global Semiconductor Rout Deepens Amid Export Controls; The SOX index plunges 7%—marking its worst two-month slump since 2001—as TSMC enforces stringent new China chip order halts under tightened U.S. export rules.
+- Key Performance & Architecture Highlights:
+  * Model/Software metric: AI-driven autonomous reasoning frameworks achieve a landmark mathematical theorem validation, matching human expert proofs across complex number theory domains.
+  * Hardware/PPA metric: SOX components including Micron (-7%), Broadcom (-11%), and KLA (-10%) face severe capital recalibration while scaling advanced 2nm GAAFET nodes.
+  * Packaging & Interconnect metric: 3D-IC interconnect and hatched ground designs face increased thermal and signal integrity demands as CoWoS supply chains absorb tighter geographical restrictions.
+  * Infrastructure & Capital metric: Meta reports a 45% surge in AI-driven data center carbon emissions, triggering a formal reevaluation of its 2030 net-zero climate goals amid mounting MW power constraints.
+  * Strategic/Geopolitical shift: TSMC strictly cuts off targeted Chinese chip orders, aligning directly with newly enacted U.S. Department of Commerce export regulations and multi-region foundry localization.
+- [Call-to-Action Link]: "Read the full 24-hour detailed technical analysis here -> https://mjaganmohan343.github.io/AI_Updates_Proj/"
+
+Curated by: MJM
